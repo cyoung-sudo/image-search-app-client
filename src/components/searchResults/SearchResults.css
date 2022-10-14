@@ -1,0 +1,91 @@
+#searchResults {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--light-color);
+  border-radius: 1rem;
+}
+
+#searchResults-header {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/*----- List -----*/
+#searchResults-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+#searchResults-list li {
+  width: 100%;
+  margin: 1rem;
+  background-color: var(--light-dark-color);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.searchResults-listItem-image:hover {
+  opacity: 70%;
+}
+
+.searchResults-listItem-image img {
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.searchResults-listItem-content {
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.searchResults-listItem-content div {
+  margin-bottom: 0.5rem;
+}
+
+.searchResults-listItem-content a {
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--theme-color);
+  color: black;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.searchResults-listItem-content a:hover {
+  text-decoration: underline;
+}
+/*----- /List -----*/
+
+/*----- Breakpoints -----*/
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #searchResults {
+    width: 80%;
+  }
+  #searchResults-list li {
+    width: 45%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #searchResults {
+    width: 60%;
+  }
+  #searchResults-list li {
+    width: 29%;
+  }
+}
+/*----- /Breakpoints -----*/

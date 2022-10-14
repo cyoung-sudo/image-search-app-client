@@ -1,0 +1,25 @@
+.searchResults-list-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.searchResults-list-pagination button {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--light-dark-color);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.searchResults-list-pagination button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.searchResults-list-pagination div {
+  padding: 0.3rem 0.5rem;
+  font-weight: 300;
+}

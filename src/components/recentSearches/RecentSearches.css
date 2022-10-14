@@ -1,0 +1,35 @@
+#recentSearches {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--light-color);
+  border-radius: 1rem;
+  list-style: none;
+  font-weight: 300;
+}
+
+#recentSearches li {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  border-bottom: 0.5px solid black;
+}
+
+#recentSearches li div {
+  margin-bottom: 0.3rem;
+}
+
+/*----- Breakpoints -----*/
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  #recentSearches {
+    width: 70%;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  #recentSearches {
+    width: 50%;
+  }
+}
+/*----- /Breakpoints -----*/

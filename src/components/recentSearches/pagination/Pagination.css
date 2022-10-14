@@ -1,0 +1,24 @@
+.recentSearches-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.recentSearches-pagination button {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--light-dark-color);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.recentSearches-pagination button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.recentSearches-pagination div {
+  padding: 0.3rem 0.5rem;
+}

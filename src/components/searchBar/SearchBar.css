@@ -1,0 +1,29 @@
+#searchBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.searchBar-input input,
+.searchBar-submit input {
+  padding: 0.3rem 0.5rem;
+  font-size: var(--default-font);
+}
+
+.searchBar-input input {
+  border: 0.5px solid black;
+  border-right: none;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.searchBar-submit input {
+  border: 0.5px solid black;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.searchBar-submit input:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
