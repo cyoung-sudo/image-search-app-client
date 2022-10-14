@@ -27,7 +27,11 @@ export default function SearchBar(props) {
           props.handlePopUp("Server issue has occured. Please try later", "error");
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        // Server offline
+        console.log(err);
+        props.handlePopUp("Server issue has occured. Please try later", "error");
+      });
     }
   };
 

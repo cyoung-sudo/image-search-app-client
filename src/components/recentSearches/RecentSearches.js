@@ -31,7 +31,12 @@ export default function RecentSearches(props) {
         props.setMode("search");
       }
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      // Server offline
+      console.log(err);
+      props.handlePopUp("Server issue has occured. Please try later", "error");
+      props.setMode("search");
+    });
   }, []);
 
   // Set page content
