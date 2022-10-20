@@ -63,19 +63,17 @@ function App() {
 
         <div id="app-mode">
           {(mode === "recent") && 
-            <button
-              role="app-mode-search"
+            <button 
               onClick={() => setMode("search")}>Search Images</button>}
           {(mode === "search") && 
-            <button 
-              role="app-mode-recent"
+            <button
               onClick={() => setMode("recent")}>Recent Searches</button>}
         </div>
 
         {/*----- Search Bar -----*/}
         {(mode === "search") && 
           <div 
-            role="app-searchBar-wrapper"
+            data-testid="app-searchBar-wrapper"
             id="app-searchBar-wrapper">
             <SearchBar
               setSearchInput={setSearchInput}
@@ -88,7 +86,7 @@ function App() {
         {/*----- Search Results -----*/}
         {(mode === "search") && 
           <div
-            role="app-searchResults-wrapper"
+            data-testid="app-searchResults-wrapper"
             id="app-searchResults-wrapper">
             <SearchResults
               searchInput={searchInput}
@@ -103,7 +101,7 @@ function App() {
         {/*----- Recent Searches -----*/}
         {(mode === "recent") && 
           <div 
-            role="app-recentSearches-wrapper"
+            data-testid="app-recentSearches-wrapper"
             id="app-recentSearches-wrapper">
             <RecentSearches 
               setMode={setMode}

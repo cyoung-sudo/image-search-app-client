@@ -39,16 +39,16 @@ export default function SearchBar(props) {
     <form id="searchBar" onSubmit={handleSubmit}>
       <div className="searchBar-input">
         <input 
-          role="searchBar-input"
+          data-testid="searchBar-input"
           type="text"
           placeholder="image search"
           onChange={e => setSearchInput(e.target.value)}/>
       </div>
 
       <div className="searchBar-submit">
-        <input 
-          role="searchBar-submit"
-          type="submit" 
+        <input
+          data-testid="searchBar-submit"
+          type="submit"
           value="Search"/>
       </div>
     </form>

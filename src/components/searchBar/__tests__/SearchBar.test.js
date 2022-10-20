@@ -1,5 +1,4 @@
 import { render, screen, cleanup, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 // Components
 import SearchBar from "../SearchBar";
@@ -23,8 +22,8 @@ describe("<SearchBar/>", () => {
       handlePopUp={mockHandlePopUp}/>);
 
     // Search for "cat"
-    userEvent.type(screen.getByRole("searchBar-input"), "cat");
-    userEvent.click(screen.getByRole("searchBar-submit"));
+    userEvent.type(screen.getByTestId("searchBar-input"), "cat");
+    userEvent.click(screen.getByTestId("searchBar-submit"));
 
     const testData = Array(10).fill({
       description: "image description",
@@ -46,7 +45,7 @@ describe("<SearchBar/>", () => {
     render(<SearchBar handlePopUp={mockHandlePopUp}/>);
 
     // Search with empty string
-    userEvent.click(screen.getByRole("searchBar-submit"));
+    userEvent.click(screen.getByTestId("searchBar-submit"));
 
     expect(mockHandlePopUp).toHaveBeenCalledWith("Search input is empty", "error");
   });

@@ -1,5 +1,4 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 // Components
 import App from "./App";
@@ -23,30 +22,30 @@ describe("<App/>", () => {
     render(<App />);
 
     // Assert initial state
-    expect(screen.getByRole("app-mode-recent")).toBeInTheDocument();
-    expect(screen.queryByRole("app-mode-search")).not.toBeInTheDocument();
-    expect(screen.getByRole("app-searchBar-wrapper")).toBeInTheDocument();
-    expect(screen.getByRole("app-searchResults-wrapper")).toBeInTheDocument();
-    expect(screen.queryByRole("app-recentSearches-wrapper")).not.toBeInTheDocument();
+    expect(screen.getByText("Recent Searches"));
+    expect(screen.queryByText("Search Images")).toBeNull();
+    expect(screen.getByTestId("app-searchBar-wrapper")).toBeInTheDocument();
+    expect(screen.getByTestId("app-searchResults-wrapper")).toBeInTheDocument();
+    expect(screen.queryByTestId("app-recentSearches-wrapper")).toBeNull();
     
     // Toggle to "search" mode
-    userEvent.click(screen.getByRole("app-mode-recent"));
+    userEvent.click(screen.getByText("Recent Searches"));
 
     // Assert updated state
-    expect(screen.queryByRole("app-mode-recent")).not.toBeInTheDocument();
-    expect(screen.getByRole("app-mode-search")).toBeInTheDocument();
-    expect(screen.queryByRole("app-searchBar-wrapper")).not.toBeInTheDocument();
-    expect(screen.queryByRole("app-searchResults-wrapper")).not.toBeInTheDocument();
-    expect(screen.getByRole("app-recentSearches-wrapper")).toBeInTheDocument();
+    expect(screen.queryByText("Recent Searches")).toBeNull();
+    expect(screen.getByText("Search Images"));
+    expect(screen.queryByTestId("app-searchBar-wrapper")).toBeNull();
+    expect(screen.queryByTestId("app-searchResults-wrapper")).toBeNull();
+    expect(screen.getByTestId("app-recentSearches-wrapper")).toBeInTheDocument();
 
     // Toggle to "recent" mode
-    userEvent.click(screen.getByRole("app-mode-search"));
+    userEvent.click(screen.getByText("Search Images"));
 
     // Assert updated state
-    expect(screen.getByRole("app-mode-recent")).toBeInTheDocument();
-    expect(screen.queryByRole("app-mode-search")).not.toBeInTheDocument();
-    expect(screen.getByRole("app-searchBar-wrapper")).toBeInTheDocument();
-    expect(screen.getByRole("app-searchResults-wrapper")).toBeInTheDocument();
-    expect(screen.queryByRole("app-recentSearches-wrapper")).not.toBeInTheDocument();
+    expect(screen.getByText("Recent Searches"));
+    expect(screen.queryByText("Search Images")).toBeNull();
+    expect(screen.getByTestId("app-searchBar-wrapper")).toBeInTheDocument();
+    expect(screen.getByTestId("app-searchResults-wrapper")).toBeInTheDocument();
+    expect(screen.queryByTestId("app-recentSearches-wrapper")).toBeNull();
   });
 });

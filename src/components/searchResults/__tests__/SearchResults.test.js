@@ -1,5 +1,4 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 // Components
 import SearchResults from "../SearchResults";
@@ -22,10 +21,10 @@ describe("<SearchBar/>", () => {
   it("displays search results", () => {
     render(<SearchResults searchResults={testData}/>);
 
-    expect(screen.getAllByRole("searchResults-listItem")).toHaveLength(10);
-    expect(screen.getAllByRole("searchResults-list-url")[0]).toHaveAttribute("src", "image url");
-    expect(screen.getAllByRole("searchResults-list-desc")[0].textContent).toBe("image description");
-    expect(screen.getAllByRole("searchResults-list-parentPage")[0]).toHaveAttribute("href", "image parentPage");
+    expect(screen.getAllByRole("listitem")).toHaveLength(10);
+    expect(screen.getAllByTestId("searchResults-list-url")[0]).toHaveAttribute("src", "image url");
+    expect(screen.getAllByText("image description")).toHaveLength(10);
+    expect(screen.getAllByTestId("searchResults-list-parentPage")[0]).toHaveAttribute("href", "image parentPage");
   });
 
   //----- Test 2 -----
@@ -37,21 +36,21 @@ describe("<SearchBar/>", () => {
       searchResults={testData}
       setSearchResults={mockSetSearchResults}/>);
 
-    expect(screen.getAllByRole("pagination-next")).toHaveLength(2);
-    expect(screen.queryAllByRole("pagination-prev")).toHaveLength(0);
-    expect(screen.getAllByRole("pagination-page")[0].textContent).toBe("Page 1");
+    expect(screen.getAllByText("Next")).toHaveLength(2);
+    expect(screen.queryAllByText("Prev")).toHaveLength(0);
+    expect(screen.getAllByText("Page 1")).toHaveLength(2);
 
-    userEvent.click(screen.getAllByRole("pagination-next")[0]);
+    userEvent.click(screen.getAllByText("Next")[0]);
 
-    expect(screen.getAllByRole("pagination-next")).toHaveLength(2);
-    expect(screen.getAllByRole("pagination-prev")).toHaveLength(2);
-    expect(screen.getAllByRole("pagination-page")[0].textContent).toBe("Page 2");
+    expect(screen.getAllByText("Next")).toHaveLength(2);
+    expect(screen.getAllByText("Prev")).toHaveLength(2);
+    expect(screen.getAllByText("Page 2")).toHaveLength(2);
   });
 
   //----- Test 3 -----
   it("renders <EmptyResults/> if no search results exist", () => {
     render(<SearchResults searchResults={[]}/>);
 
-    expect(screen.getByRole("emptyResults")).toBeInTheDocument();
+    expect(screen.getByText("Browse for a variety of images"));
   });
 });

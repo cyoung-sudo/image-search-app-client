@@ -35,9 +35,9 @@ export default function PopUp(props) {
   }, [props.overridePopUp]);
 
   return (
-    <div role="popUp" id="popUp">
+    <div id="popUp">
       <motion.div
-        role="popUp-msg"
+        data-testid="popUp-msg"
         className={props.popUpType === "success" ? "popUp-success" : "popUp-error"}
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}

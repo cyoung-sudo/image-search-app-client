@@ -73,13 +73,13 @@ export default function SearchResults(props) {
   
           {/*--- Images ---*/}
           {props.searchResults.map((result, idx) => (
-            <li role="searchResults-listItem" key={idx}>
+            <li data-testid="listitem" key={idx}>
               <a className="searchResults-listItem-image" href={result.url} target="_blank" rel="noreferrer">
-                <img role="searchResults-list-url" src={result.url}/>
+                <img data-testid="searchResults-list-url" src={result.url}/>
               </a>
               <div className="searchResults-listItem-content">
-                <div role="searchResults-list-desc">{result.description}</div>
-                <a role="searchResults-list-parentPage" href={result.parentPage} target="_blank" rel="noreferrer">Visit Parent Page</a>
+                <div>{result.description}</div>
+                <a data-testid="searchResults-list-parentPage" href={result.parentPage} target="_blank" rel="noreferrer">Visit Parent Page</a>
               </div>
             </li>
           ))}

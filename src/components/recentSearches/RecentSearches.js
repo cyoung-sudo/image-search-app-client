@@ -69,7 +69,7 @@ export default function RecentSearches(props) {
   // Check if page content is loaded
   if(!loading && (pageContent.length > 0)) {
     return (
-      <ul role="recentSearches" id="recentSearches">
+      <ul data-testid="recentSearches" id="recentSearches">
         {/*--- Pagination ---*/}
         <Pagination 
           page={page} 
@@ -79,7 +79,7 @@ export default function RecentSearches(props) {
 
         {/*--- Searches ---*/}
         {pageContent.map((search, idx) => (
-          <li role="recentSearches-listItem" key={idx}>
+          <li key={idx}>
             <div>{search.searchQuery}</div>
             <div>{search.timeSearched}</div>
           </li>
