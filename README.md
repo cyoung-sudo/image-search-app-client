@@ -1,8 +1,6 @@
 <h1 align="center">Image Search App (client)</h1>
 
-## Description
-
-An app that allows the user to browse for images. This repository is the client code.
+<p align="center">An app that allows the user to browse for images. This repository is the client code.</p>
 
 ## Links
 
