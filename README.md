@@ -12,9 +12,9 @@ An app that allows the user to browse for images. This repository is the client 
 
 ## Screenshots
 
-![](/client/public/screenshot1.png)
+![](/public/screenshot1.png)
 
-![](/client/public/screenshot2.png)
+![](/public/screenshot2.png)
 
 ## Available Commands
 
